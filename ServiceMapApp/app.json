@@ -1,30 +1,44 @@
 {
   "expo": {
-    "name": "ServiceMapApp",
-    "slug": "ServiceMapApp",
+    "name": "ServiceMap Cyprus",
+    "slug": "servicemap-cyprus",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.servicemap.cyprus",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Цей додаток використовує вашу геолокацію для пошуку провайдерів поблизу."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "package": "com.servicemap.cyprus"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Дозвольте ServiceMap Cyprus використовувати вашу геолокацію для пошуку провайдерів поблизу."
+        }
+      ]
+    ]
   }
 }

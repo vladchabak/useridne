@@ -90,6 +90,14 @@ export default function HomeScreen({ navigation }: Props) {
             />
 
             <StatusBar style="light" />
+            <TouchableOpacity
+                style={styles.mapButton}
+                onPress={() => navigation.navigate('Map')}
+                activeOpacity={0.8}
+            >
+                <Text style={styles.mapButtonIcon}>🗺️</Text>
+                <Text style={styles.mapButtonText}>Переглянути карту</Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -160,4 +168,31 @@ const styles = StyleSheet.create({
         color: '#95A5A6',
         textAlign: 'center',
     },
+    mapButton: {
+        position: 'absolute',
+        bottom: 20,
+        left: 20,
+        right: 20,
+        backgroundColor: '#4A90E2',
+        padding: 15,
+        borderRadius: 12,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+        elevation: 5,
+    },
+    mapButtonIcon: {
+        fontSize: 24,
+        marginRight: 10,
+    },
+    mapButtonText: {
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+
 });
