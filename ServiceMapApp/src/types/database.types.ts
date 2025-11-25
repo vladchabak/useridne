@@ -42,3 +42,14 @@ export interface NearbyProvider extends Provider {
   category_icon: string;
   distance_km: number;
 }
+
+export interface Review {
+  id: string;
+  provider_id: string;
+  user_id: string;
+  rating: number;
+  comment: string | null;
+  created_at: string;
+  updated_at: string;
+  profile?: Profile; 
+}
