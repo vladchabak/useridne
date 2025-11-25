@@ -17,7 +17,7 @@ import { RootStackParamList } from '../navigation/AppNavigator';
 import { supabase } from '../config/supabase';
 import { Provider, Review } from '../types/database.types';
 import { Rating } from 'react-native-ratings'; // Добавим библиотеку для рейтинга
-import { useUser } from '../utils/UserContext'; // Хук для получения текущего пользователя
+import { useAuth } from '../contexts/AuthContext';
 
 type ProviderDetailRouteProp = RouteProp<RootStackParamList, 'ProviderDetail'>;
 
@@ -32,7 +32,7 @@ export default function ProviderDetailScreen({ route }: Props) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [newRating, setNewRating] = useState<number | null>(null);
   const [newComment, setNewComment] = useState<string>('');
-  const { user, session } = useUser(); // Получаем пользователя и сессию
+  const { user, session } = useAuth();
 
   useEffect(() => {
     loadProvider();
