@@ -98,6 +98,13 @@ export default function HomeScreen({ navigation }: Props) {
                 <Text style={styles.mapButtonIcon}>🗺️</Text>
                 <Text style={styles.mapButtonText}>Переглянути карту</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity
+                style={styles.mapButton}
+                onPress={() => navigation.navigate('Login')}
+            >
+                <Text style={styles.mapButtonText}>🔐 ТЕСТ: Перейти на Login</Text>
+            </TouchableOpacity>
         </View>
     );
 }
